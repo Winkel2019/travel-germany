@@ -1,9 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const CulturalTrip = ({name, handleState, category, description, duration, date, price, image, addList}) => {
-    
+const CulturalTrip = ({name, handleState, category, description, duration, date, price, image, dispatchList}) => {
+    const [toggle, setToggle] = useState(false)
+
+    const buttonAdd = () => {
+        console.log('dispatchList');
+        dispatchList ({type: 'increment'})
+        setToggle(true)
+    }
+
+    const buttonSub = () => {
+        dispatchList({type: 'decrement'})
+        setToggle(false)
+    }
+
     return (
-        <section className="trip">
+        <section className={toggle? 'trip show': 'trip' }>
         <div className='image-container'><img src={image} alt={name} /></div>
         <p style={{color:"grey", fontStyle:"italic"}}>{category}</p>
         <h2>{name}</h2>
@@ -14,7 +26,10 @@ const CulturalTrip = ({name, handleState, category, description, duration, date,
             <li>Date: {date}</li>
             <li>Price from: {price}</li>
         </ul>
-        <button className='addBtn' onClick={(e) => addList(e)}>Add to Wishlist</button>
+        <div className='btn-container'>
+                <button className='addBtn'  onClick={buttonAdd}>Add to Wishlist</button>
+                <button className='addBtn' onClick={buttonSub}>Delete from Wishlist</button>
+        </div> 
     </section>
     )
 }

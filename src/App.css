@@ -7,10 +7,10 @@
 }
 
 /* header styling */
-header {
+Header {
+  position: sticky;
   width: 100%;
   border-bottom: 1px dotted rgb(158, 155, 155);
-  position: sticky;
   top: 0;
   background-color: white;
   z-index: 100;
@@ -18,22 +18,22 @@ header {
 
 h1 {
   text-align: center;
-  font-size: 60px;
+  font-size: 35px;
   padding-top: 20px;
   margin-bottom: 20px;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: rgba(255, 0, 0, 0.42);
 }
 
 .icons {
   height: 5%;
   display: flex;
-  justify-content: flex-end;
-  padding-right: 20px;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .icon {
@@ -46,20 +46,26 @@ h2 {
   padding-top: 10px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
 }
 
 .checkboxes {
-  padding-top: 20px;
-  padding-left: 20px;
-  margin-left: 20px;
+  margin: 0 Auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .singleCheck {
   padding-top: 20px;
+}
+
+.boxes {
+  margin-left: 8px;
 }
 
 label {
@@ -67,7 +73,6 @@ label {
 }
 
 .trip-container {
-  width: 85%;
   display: flex;
   flex-grow: 1;
   justify-content: center;
@@ -78,7 +83,7 @@ label {
 }
 
 .trip {
-  width: 350px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -87,14 +92,19 @@ label {
   border: 1px solid rgba(158, 155, 155, 0.529);
 }
 
+.show {
+  background-color: rgba(255, 0, 0, 0.24);
+  color: white;
+}
+
 .image-container {
   width: 100%;
   object-fit: contain;
 }
 
 img {
-  width: 350px;
-  height: 300px;
+  width: 300px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -111,7 +121,6 @@ ul {
   padding: 0 10px;
 }
 
-.addBtn,
 .resetBtn {
   align-self: center;
   width: 150px;
@@ -122,12 +131,36 @@ ul {
   outline: none;
 }
 
-.addBtn:hover,
 .resetBtn:hover {
   background-color: rgba(255, 0, 0, 0.42);
   color: aliceblue;
   border: none;
   outline: none;
+}
+
+.addBtn {
+  background-color: rgba(255, 0, 0, 0.24);
+  color: rgb(90, 88, 88);
+  width: 100px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.addBtn:hover {
+  background-color: rgba(255, 0, 0, 0.42);
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 20px;
 }
 
 .order {
@@ -153,6 +186,7 @@ ul {
 /* form styling */
 form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
@@ -160,20 +194,26 @@ form {
 }
 
 input[type="text"] {
-  width: 250px;
-  height: 40px;
+  width: 220px;
+  height: 25px;
   padding-left: 10px;
-  margin-right: 20px;
   border: 1px solid rgba(158, 155, 155, 0.372);
+  margin-bottom: 7px;
+  font-size: 10px;
 }
 
 input[type="text"]:focus {
   outline: none;
 }
 
+.catTitle {
+  font-size: 15px;
+}
+
 .btn {
-  height: 30px;
-  width: 60px;
+  height: 25px;
+  width: 50px;
+  font-size: 10px;
   border: none;
   background-color: rgba(255, 0, 0, 0.42);
   outline: none;
@@ -189,4 +229,80 @@ footer {
   height: 50px;
   color: rgb(95, 93, 93);
   text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .boxes {
+    display: flex;
+    flex-direction: row;
+  }
+
+  label {
+    margin-right: 10px;
+    padding-left: 6px;
+  }
+
+  form {
+    flex-direction: row;
+    margin-top: 20px;
+  }
+
+  input[type="text"] {
+    width: 250px;
+    height: 40px;
+    padding-left: 10px;
+    margin-right: 20px;
+    font-size: 13px;
+  }
+
+  .container {
+    justify-content: center;
+  }
+
+  .btn {
+    height: 35px;
+    margin-top: -5px;
+    width: 60px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  .icons {
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+
+  .boxes {
+    flex-direction: column;
+  }
+
+  label {
+    padding-left: 15px;
+  }
+
+  .checkboxes {
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-left: 20px;
+    align-self: start;
+  }
+
+  .container {
+    flex-direction: row;
+    flex-wrap: no-wrap;
+  }
+
+  .trip {
+    width: 350px;
+  }
+
+  img {
+    width: 350px;
+    height: 250px;
+  }
 }

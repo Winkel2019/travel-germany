@@ -1,13 +1,15 @@
 import React from 'react';
 import Trips from './Trips';
 
-const TripContainer = ({handleState, checkboxes, addList, dataToShow}) => {
-    
+const TripContainer = ({dispatchList, dataToShow, handleState}) => {
+    console.log(dispatchList);
+
     return (
        <section className="trip-container">
          
-        {dataToShow.map(info => (
+        {dataToShow.map((info, index) =>  (
         <Trips 
+        key={index}
         name={info.name}
         category={info.category}
         duration={info.duration}
@@ -15,9 +17,8 @@ const TripContainer = ({handleState, checkboxes, addList, dataToShow}) => {
         price={info.price}
         description={info.description}
         image={info.image}
-        addList={addList}
+        dispatchList={dispatchList}
         handleState={handleState}
-        checkboxes={checkboxes}
     />
     ))} 
        </section>

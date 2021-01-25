@@ -1,49 +1,47 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {GrSync} from "react-icons/gr";
 
-const Checkboxes = ({checkboxes, checkboxHandler}) => {
-      const [filter, setFilter] = useState(false)
+const Checkboxes = ({checkboxes,resetFilter, checkboxHandler}) => {
+    const {culturalTrip, musicTrip, natureTrip, shipTrip, specialTrip} = checkboxes
 
-      const resetFilter = () => {
-        setFilter(!filter)
-      }
-
-      return (
+    return (
         <section className="checkboxes">
             <h3>Filter trips</h3>
+            <div className="boxes">
             <div className="singleCheck">
                 <input
-                type='checkbox' name='culturalTrip' checked={checkboxes.culturalTrip}
+                type='checkbox' name='culturalTrip' checked={culturalTrip}
                 onChange={(e) => checkboxHandler(e)}/>
                 <label>Cultural Tours</label>
             </div>
             <div className="singleCheck">
             <input
-                type='checkbox' name='musicTrip' checked={checkboxes.musicTrip}
+                type='checkbox' name='musicTrip' checked={musicTrip}
                 onChange={(e) => checkboxHandler(e)}/>
                 <label>Music Tours</label>
             </div>
             <div className="singleCheck">
                 <input
-                type='checkbox' name='natureTrip' checked={checkboxes.natureTrip}
+                type='checkbox' name='natureTrip' checked={natureTrip}
                 onChange={(e) => checkboxHandler(e)}/>
-                <label>Nature and Active </label>
+                <label>Nature/Active </label>
             </div>
             <div className="singleCheck">
                 <input
-                type='checkbox' name='shipTrip' checked={checkboxes.shipTrip}
+                type='checkbox' name='shipTrip' checked={shipTrip}
                 onChange={(e) => checkboxHandler(e)}/>
-                <label>Ship and Train</label>
+                <label>Ship/Train</label>
             </div>
             <div className="singleCheck">
                 <input
-                type='checkbox' name='specialTrip' checked={checkboxes.specialTrip}
+                type='checkbox' name='specialTrip' checked={specialTrip}
                 onChange={(e) => checkboxHandler(e)}/>
                 <label>Special Trips</label>
             </div>
-            <button className="resetBtn" onClick={(e) =>resetFilter(e)}>{GrSync} Reset Filter</button>
+            </div>
+            <button className="resetBtn" onClick={(e) =>resetFilter(e)}><GrSync /> Reset Filter</button>
         </section>
-      );
+    );
 }
 
 export default Checkboxes
