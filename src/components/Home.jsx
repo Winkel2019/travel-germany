@@ -7,7 +7,7 @@ const Home = () => {
       <h1>We're ready when you are</h1>
       <Link to='/showTrips'>
         <button type='button' className='checkout'>
-          Checkout Tours
+          View Tours
         </button>
       </Link>{' '}
     </main>
