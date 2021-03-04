@@ -163,9 +163,9 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 300px;
   margin: 10px 20px;
   border: 1px solid rgba(158, 155, 155, 0.529);
-  border-radius: 10px;
 }
 
 .trip img {
@@ -316,6 +316,6 @@ footer p {
   }
 
   .trip {
-    width: 450px;
+    width: 400px;
   }
 }
