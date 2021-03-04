@@ -1,14 +1,12 @@
 import React from 'react'
-import { BiCopyright } from 'react-icons/bi';
 
 const Footer = () => {
     return (
-        <footer>
-            <p>
-                <span><BiCopyright /></span>
-                2021 Choice Travel Germany
-            </p>
-        </footer>
+        <div>
+            <footer>
+                <p>&copy; {new Date().getFullYear()} Choice Travel</p>
+            </footer>
+        </div>
     )
 }
 

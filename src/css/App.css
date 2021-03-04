@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Header Styling */
+Header {
+  position: sticky;
+  width: 100%;
+  border-bottom: 2px solid rgba(74, 85, 94, 0.708);
+  top: 0;
+  background-color: white;
+  z-index: 100;
+}
+
+.logo {
+  text-align: center;
+  font-size: 55px;
+  margin: 20px 0 40px 0;
+  color: rgba(8, 48, 82, 0.824);
+  text-shadow: 4px 3px 0px rgb(177, 190, 204);
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+ul li {
+  font-size: 25px;
+  padding-left: 20px;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(8, 48, 82, 0.894);
+}
+
+/* Home and Form Styling */
+main,
+.contactForm {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/travel.jpg');
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 45px;
+  margin: 120px 10px 0 10px;
+  color: rgba(66, 46, 42, 0.803);
+  text-align: center;
+}
+
+.checkout {
+  font-size: 20px;
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+}
+
+form {
+  margin-top: 30px;
+  width: 80%;
+  height: 420px;
+  background-color: rgba(224, 210, 183, 0.783);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border: none;
+  width: 80%;
+  height: 35px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+textarea {
+  width: 80%;
+  border: none;
+  padding: 15px;
+  font-size: 15px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+form label {
+  margin-bottom: 10px;
+}
+
+/* Trip Page Styling */
+.trip-page {
+  flex-direction: row;
+  width: 100%;
+}
+
+.checkboxes {
+  margin-top: 10px;
+  margin-left: 50px;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  border: 1px solid rgba(158, 155, 155, 0.529);
+  border-radius: 10px;
+}
+
+.singleCheck {
+  display: flex;
+}
+
+.singleCheck input {
+  width: 18px;
+}
+
+.boxes {
+  margin: 8px 20px;
+}
+
+label {
+  padding-left: 15px;
+  padding-top: 8px;
+}
+
+.trip-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.trip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 20px;
+  border: 1px solid rgba(158, 155, 155, 0.529);
+  border-radius: 10px;
+}
+
+.trip img {
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Wishlist page styling */
+.wish-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.wishlist {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(158, 155, 155, 0.529);
+}
+
+.wishlist img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.noList {
+  margin-top: 40px;
+  margin-bottom: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.total-price {
+  color: tomato;
+  margin-right: 100px;
+  align-self: flex-end;
+  font-size: 25px;
+  padding: 15px 0;
+}
+
+.btn-container {
+  display: flex;
+}
+
+.btn-container p {
+  margin: 40px 10px 0 10px;
+}
+
+.add {
+  width: 40px;
+  font-size: large;
+}
+
+section {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: tomato;
+  color: white;
+  width: 120px;
+  height: 40px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+button:hover {
+  background-color: rgba(255, 0, 0, 0.52);
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.book {
+  width: 300px;
+  font-size: large;
+  margin-bottom: 100px;
+}
+
+/* Footer Styling */
+footer {
+  margin: 20px 0;
+  padding-left: 30px;
+  text-align: center;
+}
+
+footer p {
+  color: rgb(5, 28, 49);
+  padding: 20px 0;
+}
+
+/* Media quries */
+@media screen and (min-width: 700px) {
+  .trip-page {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .welcome {
+    margin-bottom: 0;
+  }
+
+  form {
+    margin-top: 60px;
+    width: 60%;
+  }
+
+  .wishlist img {
+    height: 300px;
+    width: 70%;
+    object-fit: contain;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  form {
+    margin-top: 80px;
+    width: 40%;
+  }
+
+  .wishlist {
+    flex-direction: row;
+    padding-right: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .wishlist img {
+    width: 20%;
+    height: 140px;
+    object-fit: cover;
+    padding: 10px;
+  }
+
+  .trip {
+    width: 450px;
+  }
+}
