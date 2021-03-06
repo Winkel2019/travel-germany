@@ -27,7 +27,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 
 ul {
@@ -123,14 +123,10 @@ form label {
 }
 
 .checkboxes {
-  margin-top: 10px;
-  margin-left: 50px;
-  padding: 10px 30px;
+  margin: 10px 30px;
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  border: 1px solid rgba(158, 155, 155, 0.529);
-  border-radius: 10px;
 }
 
 .singleCheck {
@@ -142,7 +138,7 @@ form label {
 }
 
 .boxes {
-  margin: 8px 20px;
+  margin-top: 20px;
 }
 
 label {
@@ -153,18 +149,18 @@ label {
 .trip-container {
   display: flex;
   justify-content: center;
-  flex-grow: 1;
   flex-wrap: wrap;
-  margin-bottom: 30px;
-  width: 100%;
+  margin-right: 30px;
+  border-left: 1px solid rgba(158, 155, 155, 0.229);
 }
 
 .trip {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  margin: 10px 20px;
+  width: 320px;
+  margin: 10px 30px;
   border: 1px solid rgba(158, 155, 155, 0.529);
 }
 
@@ -247,6 +243,10 @@ button {
   outline: none;
 }
 
+.resetBtn {
+  width: 160px;
+}
+
 button:hover {
   background-color: rgba(255, 0, 0, 0.52);
   border: none;
@@ -274,15 +274,6 @@ footer p {
 
 /* Media quries */
 @media screen and (min-width: 700px) {
-  .trip-page {
-    flex-direction: row;
-    width: 100%;
-  }
-
-  .welcome {
-    margin-bottom: 0;
-  }
-
   form {
     margin-top: 60px;
     width: 60%;
@@ -313,9 +304,5 @@ footer p {
     height: 140px;
     object-fit: cover;
     padding: 10px;
-  }
-
-  .trip {
-    width: 400px;
   }
 }

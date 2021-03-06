@@ -3,7 +3,9 @@ import MyContext from '../context/MyContext';
 import { GrSync } from 'react-icons/gr';
 
 const Filter = () => {
-  const { checkboxes, resetFilter, checkboxHandler } = useContext(MyContext);
+  const { data, checkboxes, resetFilter, checkboxHandler } = useContext(
+    MyContext
+  );
   const {
     culturalTrip,
     musicTrip,
@@ -11,6 +13,12 @@ const Filter = () => {
     shipTrip,
     specialTrip,
   } = checkboxes;
+
+  const culturalTrips = data.filter((trip) => trip.checkbox === 'culturalTrip');
+  const musicTrips = data.filter((trip) => trip.checkbox === 'musicTrip');
+  const natureTrips = data.filter((trip) => trip.checkbox === 'natureTrip');
+  const shipTrips = data.filter((trip) => trip.checkbox === 'shipTrip');
+  const specialTrips = data.filter((trip) => trip.checkbox === 'specialTrip');
 
   return (
     <section className='checkboxes'>
@@ -23,7 +31,7 @@ const Filter = () => {
             checked={culturalTrip}
             onChange={(e) => checkboxHandler(e)}
           />
-          <label>Cultural Tours</label>
+          <label>Cultural Tours ({culturalTrips.length})</label>
         </div>
         <div className='singleCheck'>
           <input
@@ -32,7 +40,7 @@ const Filter = () => {
             checked={musicTrip}
             onChange={(e) => checkboxHandler(e)}
           />
-          <label>Music Tours</label>
+          <label>Music Tours ({musicTrips.length})</label>
         </div>
         <div className='singleCheck'>
           <input
@@ -41,7 +49,7 @@ const Filter = () => {
             checked={natureTrip}
             onChange={(e) => checkboxHandler(e)}
           />
-          <label>Nature/Active </label>
+          <label>Nature/Active ({natureTrips.length})</label>
         </div>
         <div className='singleCheck'>
           <input
@@ -50,7 +58,7 @@ const Filter = () => {
             checked={shipTrip}
             onChange={(e) => checkboxHandler(e)}
           />
-          <label>Ship/Train</label>
+          <label>Ship/Train ({shipTrips.length})</label>
         </div>
         <div className='singleCheck'>
           <input
@@ -59,7 +67,7 @@ const Filter = () => {
             checked={specialTrip}
             onChange={(e) => checkboxHandler(e)}
           />
-          <label>Special Trips</label>
+          <label>Special Trips ({specialTrips.length})</label>
         </div>
       </div>
       <button className='resetBtn' onClick={(e) => resetFilter(e)}>
